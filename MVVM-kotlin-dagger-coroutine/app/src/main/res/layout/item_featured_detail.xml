@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="featured"
+            type="com.example.android_kotlin_dagger_mvvm_retrofit_coroutine.data.model.Featured" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.android_kotlin_dagger_mvvm_retrofit_coroutine.ui.components.ScalableFrameLayout
+            android:id="@+id/item_featured_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgFeatured"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageUrl="@{featured.cover.url}"/>
+
+        </com.example.android_kotlin_dagger_mvvm_retrofit_coroutine.ui.components.ScalableFrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#52000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFeaturedTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                android:text="@{featured.title.toUpperCase()}"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFeaturedSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:text="@{featured.sub_title.toUpperCase()}"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>
